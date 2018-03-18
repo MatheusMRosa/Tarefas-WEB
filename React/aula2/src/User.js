@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './User.css';
 
 class User extends Component {
     constructor(props) {
@@ -12,6 +12,7 @@ class User extends Component {
         this.save = this.save.bind(this);
         this.onCPFChanged = this.onCPFChanged.bind(this);
         this.onNomeChanged = this.onNomeChanged.bind(this);
+        this.listClient = this.listClient(this);
     }
 
     onCPFChanged(e) {
@@ -41,6 +42,17 @@ class User extends Component {
         return false;
     }
 
+    listClient() {
+        fetch('http://localhost:3001/user', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            }
+        });
+        return false
+    }
+
     componentDidMount() {
 
     }
@@ -48,7 +60,7 @@ class User extends Component {
     render() {
         return (
             <form onSubmit={this.save}>
-                <table align={"center"}>
+                <table align={"center"} className={'table'}>
                     <tr>
                         <td>Nome</td>
                         <td><input value={this.state.nome}
@@ -61,6 +73,14 @@ class User extends Component {
                     </tr>
                 </table>
                 <button type="submit">Salvar</button>
+                <table align={"center"} className={'table'}>
+                    <th>
+                        <tr>
+                            <td>Nome</td>
+                            <td>CPF</td>
+                        </tr>
+                    </th>
+                </table>
             </form>
         );
     }
