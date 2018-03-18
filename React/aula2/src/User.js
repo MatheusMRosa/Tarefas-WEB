@@ -8,7 +8,7 @@ class User extends Component {
             nome: '',
             cpf: '',
             loading: false
-        }
+        };
         this.save = this.save.bind(this);
         this.onCPFChanged = this.onCPFChanged.bind(this);
         this.onNomeChanged = this.onNomeChanged.bind(this);
@@ -46,15 +46,23 @@ class User extends Component {
     }
 
     render() {
-        return (<form onSubmit={this.save}>
-            <label>CPF</label>
-            <input value={this.state.cpf}
-                   onChange={this.onCPFChanged}/>
-            <label>Nome</label>
-            <input value={this.state.nome}
-                   onChange={this.onNomeChanged}/>
-            <button type="submit">Salvar</button>
-        </form>);
+        return (
+            <form onSubmit={this.save}>
+                <table align={"center"}>
+                    <tr>
+                        <td>Nome</td>
+                        <td><input value={this.state.nome}
+                                   onChange={this.onNomeChanged}/></td>
+                    </tr>
+                    <tr>
+                        <td>CPF</td>
+                        <td><input value={this.state.cpf}
+                                   onChange={this.onCPFChanged}/></td>
+                    </tr>
+                </table>
+                <button type="submit">Salvar</button>
+            </form>
+        );
     }
 }
 
