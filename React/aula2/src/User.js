@@ -62,6 +62,17 @@ class User extends Component {
         return false
     }
 
+    deleteOnList(id) {
+        fetch('http://localhost:3001/user/'+id, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            }
+        });
+        return false
+    }
+
     render() {
         return (
             // Check it out on Dribbble  https://dribbble.com/shots/2536070-Jelly-Buttons-CSS
@@ -94,10 +105,11 @@ class User extends Component {
                         <th className={'th'}>
                             <label>CPF</label>
                         </th>
+                        <th className={'th'}></th>
                     </tr>
                     </thead>
                     <tbody>
-                    {this.state.list.map(item => {
+                    {this.state.list.map((item, index) => {
                         return (
                             <tr className={'tr'}>
                                 <td className={'td'}>
@@ -105,6 +117,9 @@ class User extends Component {
                                 </td>
                                 <td className={'td'}>
                                     {item.cpf}
+                                </td>
+                                <td>
+                                    <button className={'buttonW'} onClick={()=>this.deleteOnList(index)}>Deletar</button>
                                 </td>
                             </tr>
                         )
