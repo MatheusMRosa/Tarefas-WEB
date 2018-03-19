@@ -1,4 +1,21 @@
 .table {
-    background: aquamarine;
-    border-top: 15px;
+    background: aliceblue;
+    border-collapse: separate;
+    border-spacing: 15px;
+    margin-top: 10px;
 }
+button {
+    background: green;
+    border-radius: 50px;
+    margin-top: 25px;
+    width: 75px;
+    height: 75px;
+    font-size: 18px;
+}
+td {
+    border-spacing: 10px;
+}
+thead {
+    margin-top: 10px;
+}
+
