@@ -64,37 +64,34 @@ class User extends Component {
 
     render() {
         return (
+            // Check it out on Dribbble  https://dribbble.com/shots/2536070-Jelly-Buttons-CSS
             <form onSubmit={this.save}>
-                <table align="center">
+                <table align="center" className={'table1'}>
                     <tbody>
                     <tr>
-                        <td>
-                            <label>Nome</label>
-                        </td>
-                        <td>
+                        <td className={'td1'}>Nome</td>
+                        <td className={'td1'}>
                             <input value={this.state.nome}
-                                   onChange={this.onNomeChanged}/>
+                                   onChange={this.onNomeChanged} className={'input'}/>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <label>CPF</label>
-                        </td>
-                        <td>
+                        <td className={'td1'}>CPF</td>
+                        <td className={'td1'}>
                             <input value={this.state.cpf}
-                                   onChange={this.onCPFChanged}/>
+                                   onChange={this.onCPFChanged} className={'input'}/>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-                <button type="submit">Salvar</button>
-                <table align="center">
+                <button type="submit" className={'buttonW'}>Salvar</button>
+                <table align="center" className={'table'}>
                     <thead>
-                    <tr>
-                        <th>
+                    <tr className={'tr'}>
+                        <th className={'th'}>
                             <label>Nome</label>
                         </th>
-                        <th>
+                        <th className={'th'}>
                             <label>CPF</label>
                         </th>
                     </tr>
@@ -102,11 +99,11 @@ class User extends Component {
                     <tbody>
                     {this.state.list.map(item => {
                         return (
-                            <tr key={item.name}>
-                                <td>
+                            <tr className={'tr'}>
+                                <td className={'td'}>
                                     {item.nome}
                                 </td>
-                                <td>
+                                <td className={'td'}>
                                     {item.cpf}
                                 </td>
                             </tr>

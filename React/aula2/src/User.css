@@ -1,21 +1,95 @@
 .table {
-    background: aliceblue;
-    border-collapse: separate;
-    border-spacing: 15px;
-    margin-top: 10px;
-}
-button {
-    background: green;
-    border-radius: 50px;
     margin-top: 25px;
-    width: 75px;
-    height: 75px;
+    border-collapse: collapse;
+    width: 60%;
+}
+.th {
+    height: 50px;
+    font-size: 25px;
+    background: cornflowerblue;
+    color: white;
+}
+.tr {
+    color: cornflowerblue;
     font-size: 18px;
 }
-td {
-    border-spacing: 10px;
+.tr:hover {
+    background-color: lightseagreen;
 }
-thead {
-    margin-top: 10px;
+.tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.td {
+    height: 50px;
+    vertical-align: bottom;
+}
+.th, .td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.table, .th, .td {
+    text-align: left;
+}
+.buttonW {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 25px;
+    width: 125px;
+    height: 50px;
+}
+.buttonW:hover {
+    -webkit-animation-name: wiggle;
+    -ms-animation-name: wiggle;
+    -ms-animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
 }
 
+@-webkit-keyframes wiggle {
+    0% {-webkit-transform: rotate(10deg);}
+    25% {-webkit-transform: rotate(-10deg);}
+    50% {-webkit-transform: rotate(20deg);}
+    75% {-webkit-transform: rotate(-5deg);}
+    100% {-webkit-transform: rotate(0deg);}
+}
+
+@-ms-keyframes wiggle {
+    0% {-ms-transform: rotate(1deg);}
+    25% {-ms-transform: rotate(-1deg);}
+    50% {-ms-transform: rotate(1.5deg);}
+    75% {-ms-transform: rotate(-5deg);}
+    100% {-ms-transform: rotate(0deg);}
+}
+
+@keyframes wiggle {
+    0% {transform: rotate(10deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(20deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+}
+.input {
+    width: 500px;
+    height: 35px;
+}
+.input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.table1 {
+    margin-top: 25px;
+    border-collapse: collapse;
+    padding-top: 10px;
+}
+.td1 {
+    text-align: left;
+    height: 30px;
+    padding-left: 50px;
+    background-color: lightblue;
+    color: white;
+}
