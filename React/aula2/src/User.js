@@ -75,7 +75,6 @@ class User extends Component {
 
     render() {
         return (
-            // Check it out on Dribbble  https://dribbble.com/shots/2536070-Jelly-Buttons-CSS
             <form onSubmit={this.save}>
                 <table align="center" className={'table1'}>
                     <tbody>
